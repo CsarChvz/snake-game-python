@@ -13,21 +13,19 @@ if __name__ == '__main__':
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
                         running = False
-                    if event.key = UP:
-
                 elif event.type == QUIT:
                     running = False
 
     # Funcion para mostrar el bloque en la pantalla surface
 
-    def draw_block():
+    def draw_block(block_y, block_x):
         surface.fill((255, 255, 254))
+        block_x = 100
+        block_y = 100
         block = pygame.image.load("resources/block.jpg").convert()
-        surface.blit(block, (100, 100))
+        surface.blit(block, (block_x, block_y))
 
     # Se termina el event loop para cerrar la ventana sin tener un timeer
-   
-    
     pygame.init()
     surface = pygame.display.set_mode((600, 600))
     draw_block()
