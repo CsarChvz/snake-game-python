@@ -1,4 +1,6 @@
 import pygame
+from pygame.locals import *
+
 
 if __name__ == '__main__':
     pygame.init()
@@ -10,6 +12,7 @@ if __name__ == '__main__':
     
     """ EVENT LOOP """
     running = True
-    while = running:
+    while running:
         for event in pygame.event.get():
-            pass
+            if event.type == KEYDOWN or event.type == QUIT:
+                running = False
