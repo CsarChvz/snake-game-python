@@ -1,5 +1,3 @@
-# Build a screen and a moving block
-
 import pygame
 from pygame.locals import *
 
