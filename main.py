@@ -22,24 +22,28 @@ if __name__ == '__main__':
 
     pygame.display.flip()
 
-    running = True
-
-    while running:
-        for event in pygame.event.get():
-            if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
+    def event_loop(block_x, block_y):
+        block_x = block_x
+        block_y = block_y
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        running = False
+                    if event.key == K_LEFT:
+                        block_x -= 10
+                        draw_block()
+                    if event.key == K_RIGHT:
+                        block_x += 10
+                        draw_block()
+                    if event.key == K_UP:
+                        block_y -= 10
+                        draw_block()
+                    if event.key == K_DOWN:
+                        block_y += 10
+                        draw_block()
+                elif event.type == QUIT:
                     running = False
-                if event.key == K_LEFT:
-                    block_x -= 10
-                    draw_block()
-                if event.key == K_RIGHT:
-                    block_x += 10
-                    draw_block()
-                if event.key == K_UP:
-                    block_y -= 10
-                    draw_block()
-                if event.key == K_DOWN:
-                    block_y += 10
-                    draw_block()
-            elif event.type == QUIT:
-                running = False
+
+    event_loop(block_x, block_y)
